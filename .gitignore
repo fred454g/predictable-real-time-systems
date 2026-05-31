@@ -1,0 +1,49 @@
+# IntelliJ / IDE
+.idea/
+*.iml
+
+# Metals / BSP
+.bsp/
+.metals/
+.bloop/
+
+# sbt / Scala build output
+target/
+project/target/
+project/project/
+
+# Chisel / generated hardware output
+generated/
+test_run_dir/
+*.fir
+*.anno.json
+*.vcd
+*.fst
+*.v
+*.sv
+
+# Quartus / FPGA tool output
+quartus/
+*.qpf
+*.qsf
+*.sof
+*.pof
+*.rpt
+*.summary
+*.pin
+*.jdi
+*.smsg
+*.done
+*.qws
+*.qdf
+*.qar
+*.qarlog
+db/
+incremental_db/
+output_files/
+
+# OS files
+.DS_Store
+
+# Logs
+*.log
