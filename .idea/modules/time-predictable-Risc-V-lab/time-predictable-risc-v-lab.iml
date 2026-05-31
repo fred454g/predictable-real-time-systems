@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="time-predictable-risc-v-lab [file:///Users/frederikholm/Developer/time-predictable-Risc-V-lab/]" external.linked.project.path="$MODULE_DIR$/../../.." external.root.project.path="$MODULE_DIR$/../../.." external.system.id="SBT" type="JAVA_MODULE" version="4">
+  <component name="DisplayModuleName">
+    <option name="name" value="time-predictable-risc-v-lab" />
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_21" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../..">
+      <excludeFolder url="file://$MODULE_DIR$/../../../target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="time-predictable-risc-v-lab.main" />
+    <orderEntry type="module" module-name="time-predictable-risc-v-lab.test" production-on-test="" />
+  </component>
+</module>
