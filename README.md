@@ -24,6 +24,8 @@ Cleanup the repository with:
 ```bash
 make clean
 ```
+## rules for the project:
+- no LLMs, no copy paste, only hand written code.
 
 ## sources
 empty repo: https://github.com/schoeberl/chisel-empty
