@@ -40,4 +40,39 @@ class ALUTest extends AnyFlatSpec with ChiselScalatestTester {
       dut.io.y.expect("b11110000".U)
     }
   }
+
+  it should "return XOR of the 2 numbers" in {
+    test(new ALU) {dut =>
+      dut.io.a.poke("b10010000".U)
+      dut.io.b.poke("b00000001".U)
+      dut.io.op.poke(4.U)
+      dut.io.y.expect("b10010001".U)
+    }
+  }
+
+  it should "return not of a" in {
+    test(new  ALU) {dut =>
+      dut.io.a.poke("b10010001".U)
+      dut.io.op.poke(5.U)
+      dut.io.y.expect("b01101110".U)
+    }
+  }
+
+  it should "Shift a left by one" in {
+    test(new ALU) {dut =>
+      dut.io.a.poke("b01000000".U)
+      dut.io.op.poke(6.U)
+      dut.io.y.expect("b10000000".U)
+    }
+  }
+
+  it should "Shift a right by one" in {
+    test(new ALU) {dut =>
+      dut.io.a.poke("b10000000".U)
+      dut.io.op.poke(7.U)
+      dut.io.y.expect("b01000000".U)
+    }
+  }
+
+
 }
