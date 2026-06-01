@@ -1,7 +1,23 @@
-package src
+package riscv
+
 import chisel3._
 import chisel3.util.{is, switch}
 
+
+/*
+TODO:
+ADD 32 bit
+SUB 32 bit
+AND 32 bit
+OR 32 bit
+XOR 32 bit
+NOT 32 bit
+SLL 32 bit
+SRL 32 bit
+EQ 32 bit
+LT unsigned 32 bit
+LT signed 32 bit
+ */
 class ALU extends Module {
   val io = IO(new Bundle {
     val a = Input(UInt(8.W))

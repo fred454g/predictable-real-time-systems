@@ -2,10 +2,10 @@
  * Dummy tester to start a Chisel project.
  *
  * Author: Martin Schoeberl (martin@jopdesign.com)
- * 
+ *
  */
 
-package src
+package riscv.components
 
 import chisel3._
 import chiseltest._

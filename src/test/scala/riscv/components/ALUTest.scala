@@ -1,8 +1,9 @@
-package src
+package riscv.components
 
 import chisel3._
 import chiseltest._
 import org.scalatest.flatspec.AnyFlatSpec
+import riscv.ALU
 
 class ALUTest extends AnyFlatSpec with ChiselScalatestTester {
   "ALU" should "perform addition of 2 numbers corectly" in {
