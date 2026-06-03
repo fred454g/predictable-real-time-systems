@@ -103,3 +103,4 @@ make clean
 Started from this empty Chisel repo: https://github.com/schoeberl/chisel-empty
 Chisel book: https://github.com/schoeberl/chisel-book
 Patterson & Hennessy computer organization and design - Risc-V edition
+From the original course i took: https://github.com/schoeberl/risc-v-lab
