@@ -9,3 +9,4 @@ I believe writing is a way of thinking that amplifies mastery. Thus we are doing
 No LLM's, no shortcuts, but pure chase of mastery.
 
 ## Chap 1 - The ALU
+now implemented TODO: Write thsi

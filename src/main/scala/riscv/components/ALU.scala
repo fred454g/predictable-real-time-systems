@@ -1,5 +1,6 @@
 package riscv.components
 
+import riscv.isa.ALUOps
 import chisel3._
 import chisel3.util.{is, switch}
 
@@ -12,18 +13,20 @@ class ALU extends Module {
   })
   io.y := 0.U
 
+  val shamt = io.b(4,0)
+
   //Mux
   switch(io.op){
-    is(0.U) {io.y := io.a + io.b} //plus
-    is(1.U) {io.y := io.a - io.b} //sub, no overflow handling atm TODO:
-    is(2.U) {io.y := io.a & io.b} //AND
-    is(3.U) {io.y := io.a | io.b} //OR
-    is(4.U) {io.y := io.a ^ io.b} //XOR
-    is(5.U) {io.y := ~io.a} //not a
-    is(6.U) {io.y := io.a << 1} //Shift left
-    is(7.U) {io.y := io.a >> 1} //Shift right
-    is(8.U) {io.y := io.a === io.b} // eq
-    is(9.U) {io.y := io.a < io.b} //lt
-    is(10.U) {io.y := (io.a.asSInt < io.b.asSInt).asUInt} //ltSigned
+    is(ALUOps.ADD) {io.y := io.a + io.b} //add
+    is(ALUOps.SUB) {io.y := io.a - io.b} //sub
+    is(ALUOps.AND) {io.y := io.a & io.b} //AND
+    is(ALUOps.OR) {io.y := io.a | io.b} //OR
+    is(ALUOps.XOR) {io.y := io.a ^ io.b} //XOR
+    is(ALUOps.EQ) {io.y := (io.a === io.b).asUInt} // eq
+    is(ALUOps.LTU) {io.y := (io.a < io.b).asUInt} //less than unsigned
+    is(ALUOps.LTS) {io.y := (io.a.asSInt < io.b.asSInt).asUInt} //less than Signed
+    is(ALUOps.SLL) {io.y := io.a << shamt} //Shift left logical
+    is(ALUOps.SRL) {io.y := io.a >> shamt} //Shift right logical
+    is(ALUOps.SRA) {io.y := (io.a.asSInt >> shamt).asUInt} //Shift right arithmetic
   }
 }
