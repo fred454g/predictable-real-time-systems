@@ -15,7 +15,6 @@ class ALU extends Module {
 
   val shamt = io.b(4,0)
 
-  //Mux
   switch(io.op){
     is(ALUOps.ADD) {io.y := io.a + io.b} //add
     is(ALUOps.SUB) {io.y := io.a - io.b} //sub
