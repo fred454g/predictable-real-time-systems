@@ -2,7 +2,7 @@ package riscv.isa
 
 import chisel3._
 
-object Opcodes {
+object BranchOps {
   val BEQ = 0.U(3.W) // Branch Equal
   val BNE = 1.U(3.W) // Branch Not Equal
   val BLT = 2.U(3.W) // Branch Less Than
