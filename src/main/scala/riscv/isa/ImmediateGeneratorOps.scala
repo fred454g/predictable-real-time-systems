@@ -1,9 +1,8 @@
 package riscv.isa
 
 import chisel3._
-import chisel3.util._
 
-object Opcodes {
+object ImmediateGeneratorOps {
   // R-Type
   val OP_ALU    = 51.U(7.W)  // 7'b0110011
 

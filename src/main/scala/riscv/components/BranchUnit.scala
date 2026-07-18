@@ -15,13 +15,14 @@ class BranchUnit extends Module {
   })
 
   io.takeBranch := false.B
-
-  switch(io.funct3){
-    is(BranchOps.BEQ) {io.takeBranch := io.a === io.b}
-    is(BranchOps.BNE) {io.takeBranch := io.a =/= io.b}
-    is(BranchOps.BLT) {io.takeBranch := io.a.asSInt < io.b.asSInt}
-    is(BranchOps.BGE) {io.takeBranch := io.a.asSInt >= io.b.asSInt}
-    is(BranchOps.BLTU) {io.takeBranch := (io.a < io.b)}
-    is(BranchOps.BGEU) {io.takeBranch := (io.a >= io.b).asUInt}
+  when(io.branch){
+    switch(io.funct3){
+      is(BranchOps.BEQ) {io.takeBranch := io.a === io.b}
+      is(BranchOps.BNE) {io.takeBranch := io.a =/= io.b}
+      is(BranchOps.BLT) {io.takeBranch := io.a.asSInt < io.b.asSInt}
+      is(BranchOps.BGE) {io.takeBranch := io.a.asSInt >= io.b.asSInt}
+      is(BranchOps.BLTU) {io.takeBranch := (io.a < io.b)}
+      is(BranchOps.BGEU) {io.takeBranch := (io.a >= io.b)}
+    }
   }
 }
