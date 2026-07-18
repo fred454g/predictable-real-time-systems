@@ -22,4 +22,3 @@ class ProgramCounter extends Module {
   io.pc := pcRegister
 
 }
-
