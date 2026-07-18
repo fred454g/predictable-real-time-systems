@@ -21,11 +21,11 @@ class ALU extends Module {
     is(ALUOps.AND) {io.y := io.a & io.b} //AND
     is(ALUOps.OR) {io.y := io.a | io.b} //OR
     is(ALUOps.XOR) {io.y := io.a ^ io.b} //XOR
-    is(ALUOps.EQ) {io.y := (io.a === io.b).asUInt} // eq
-    is(ALUOps.LTU) {io.y := (io.a < io.b).asUInt} //less than unsigned
-    is(ALUOps.LTS) {io.y := (io.a.asSInt < io.b.asSInt).asUInt} //less than Signed
+    is(ALUOps.SLT) {io.y := (io.a.asSInt < io.b.asSInt).asUInt} //set less than Signed
+    is(ALUOps.SLTU) {io.y := (io.a < io.b).asUInt} //set less than unsigned
     is(ALUOps.SLL) {io.y := io.a << shamt} //Shift left logical
     is(ALUOps.SRL) {io.y := io.a >> shamt} //Shift right logical
     is(ALUOps.SRA) {io.y := (io.a.asSInt >> shamt).asUInt} //Shift right arithmetic
+    is(ALUOps.PASS_B) {io.y := io.b}
   }
 }

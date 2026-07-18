@@ -51,20 +51,11 @@ class ALUTest extends AnyFlatSpec with ChiselScalatestTester {
     }
   }
 
-  it should "return 1 as a and b is equal" in {
-    test(new  ALU) {dut =>
-      dut.io.a.poke("b10000000100000001000000010000000".U)
-      dut.io.b.poke("b10000000100000001000000010000000".U)
-      dut.io.op.poke(ALUOps.EQ)
-      dut.io.y.expect(1.U)
-    }
-  }
-
   it should "return 1 as a is less than b unsigned" in {
     test(new ALU) {dut =>
       dut.io.a.poke(3.U)
       dut.io.b.poke(4.U)
-      dut.io.op.poke(ALUOps.LTU)
+      dut.io.op.poke(ALUOps.SLTU)
       dut.io.y.expect(1.U)
     }
   }
@@ -73,7 +64,7 @@ class ALUTest extends AnyFlatSpec with ChiselScalatestTester {
     test(new ALU) {dut =>
       dut.io.a.poke("hFFFFFFFB".U) //-5 as 32-bit 2's compliment
       dut.io.b.poke(1)
-      dut.io.op.poke(ALUOps.LTS)
+      dut.io.op.poke(ALUOps.SLT)
       dut.io.y.expect(1.U)
     }
   }
